@@ -203,7 +203,8 @@ unsigned inline dramsim_log2(unsigned value)
 }
 inline bool isPowerOfTwo(unsigned long x)
 {
-	return (1UL<<dramsim_log2(x)) == x;
+	return (x &&  !(x & (x - 1))); //shall be faster needs test
+//	return (1UL<<dramsim_log2(x)) == x;
 }
 
 
